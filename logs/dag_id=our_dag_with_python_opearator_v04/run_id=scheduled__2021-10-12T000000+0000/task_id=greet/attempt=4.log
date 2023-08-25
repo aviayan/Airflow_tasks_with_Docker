@@ -1,0 +1,22 @@
+[2023-08-22T05:35:13.889+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: our_dag_with_python_opearator_v04.greet scheduled__2021-10-12T00:00:00+00:00 [queued]>
+[2023-08-22T05:35:13.903+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: our_dag_with_python_opearator_v04.greet scheduled__2021-10-12T00:00:00+00:00 [queued]>
+[2023-08-22T05:35:13.904+0000] {taskinstance.py:1361} INFO - Starting attempt 4 of 6
+[2023-08-22T05:35:13.925+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): greet> on 2021-10-12 00:00:00+00:00
+[2023-08-22T05:35:13.931+0000] {standard_task_runner.py:57} INFO - Started process 17377 to run task
+[2023-08-22T05:35:13.937+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'our_dag_with_python_opearator_v04', 'greet', 'scheduled__2021-10-12T00:00:00+00:00', '--job-id', '5364', '--raw', '--subdir', 'DAGS_FOLDER/create_dag_with_python_operator.py', '--cfg-path', '/tmp/tmpvzry1x67']
+[2023-08-22T05:35:13.940+0000] {standard_task_runner.py:85} INFO - Job 5364: Subtask greet
+[2023-08-22T05:35:14.016+0000] {task_command.py:415} INFO - Running <TaskInstance: our_dag_with_python_opearator_v04.greet scheduled__2021-10-12T00:00:00+00:00 [running]> on host b0ce6883e4a1
+[2023-08-22T05:35:14.235+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='coder2j' AIRFLOW_CTX_DAG_ID='our_dag_with_python_opearator_v04' AIRFLOW_CTX_TASK_ID='greet' AIRFLOW_CTX_EXECUTION_DATE='2021-10-12T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='4' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2021-10-12T00:00:00+00:00'
+[2023-08-22T05:35:14.239+0000] {taskinstance.py:1943} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/create_dag_with_python_operator.py", line 11, in greet
+    name = ti.xcoms_pull(task_ids='get_name')
+AttributeError: 'TaskInstance' object has no attribute 'xcoms_pull'
+[2023-08-22T05:35:14.260+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=our_dag_with_python_opearator_v04, task_id=greet, execution_date=20211012T000000, start_date=20230822T053513, end_date=20230822T053514
+[2023-08-22T05:35:14.282+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 5364 for task greet ('TaskInstance' object has no attribute 'xcoms_pull'; 17377)
+[2023-08-22T05:35:14.312+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-08-22T05:35:14.340+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check

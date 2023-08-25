@@ -1,0 +1,17 @@
+[2023-08-22T04:26:30.868+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: our_first_dag_v2.second_task scheduled__2022-01-23T00:00:00+00:00 [queued]>
+[2023-08-22T04:26:30.973+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: our_first_dag_v2.second_task scheduled__2022-01-23T00:00:00+00:00 [queued]>
+[2023-08-22T04:26:30.980+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 6
+[2023-08-22T04:26:31.011+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): second_task> on 2022-01-23 00:00:00+00:00
+[2023-08-22T04:26:31.024+0000] {standard_task_runner.py:57} INFO - Started process 4429 to run task
+[2023-08-22T04:26:31.030+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'our_first_dag_v2', 'second_task', 'scheduled__2022-01-23T00:00:00+00:00', '--job-id', '1118', '--raw', '--subdir', 'DAGS_FOLDER/our_first_dag.py', '--cfg-path', '/tmp/tmpn__3l_li']
+[2023-08-22T04:26:31.080+0000] {standard_task_runner.py:85} INFO - Job 1118: Subtask second_task
+[2023-08-22T04:26:31.283+0000] {task_command.py:415} INFO - Running <TaskInstance: our_first_dag_v2.second_task scheduled__2022-01-23T00:00:00+00:00 [running]> on host b0ce6883e4a1
+[2023-08-22T04:26:31.439+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Techquier' AIRFLOW_CTX_DAG_ID='our_first_dag_v2' AIRFLOW_CTX_TASK_ID='second_task' AIRFLOW_CTX_EXECUTION_DATE='2022-01-23T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2022-01-23T00:00:00+00:00'
+[2023-08-22T04:26:31.441+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-08-22T04:26:31.443+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'echo hey, I am task2 and will be running after task1']
+[2023-08-22T04:26:31.458+0000] {subprocess.py:86} INFO - Output:
+[2023-08-22T04:26:31.460+0000] {subprocess.py:93} INFO - hey, I am task2 and will be running after task1
+[2023-08-22T04:26:31.461+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-08-22T04:26:31.505+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=our_first_dag_v2, task_id=second_task, execution_date=20220123T000000, start_date=20230822T042630, end_date=20230822T042631
+[2023-08-22T04:26:31.567+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-08-22T04:26:31.605+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check

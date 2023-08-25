@@ -1,0 +1,17 @@
+[2023-08-22T10:39:06.355+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_with_cron_expression_v04.task1 scheduled__2023-04-28T03:00:00+00:00 [queued]>
+[2023-08-22T10:39:06.370+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_with_cron_expression_v04.task1 scheduled__2023-04-28T03:00:00+00:00 [queued]>
+[2023-08-22T10:39:06.371+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 6
+[2023-08-22T10:39:06.392+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): task1> on 2023-04-28 03:00:00+00:00
+[2023-08-22T10:39:06.399+0000] {standard_task_runner.py:57} INFO - Started process 34182 to run task
+[2023-08-22T10:39:06.404+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'dag_with_cron_expression_v04', 'task1', 'scheduled__2023-04-28T03:00:00+00:00', '--job-id', '11629', '--raw', '--subdir', 'DAGS_FOLDER/dag_with_cron_expression.py', '--cfg-path', '/tmp/tmpuns5mfuy']
+[2023-08-22T10:39:06.406+0000] {standard_task_runner.py:85} INFO - Job 11629: Subtask task1
+[2023-08-22T10:39:06.508+0000] {task_command.py:415} INFO - Running <TaskInstance: dag_with_cron_expression_v04.task1 scheduled__2023-04-28T03:00:00+00:00 [running]> on host b0ce6883e4a1
+[2023-08-22T10:39:06.657+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Techquier' AIRFLOW_CTX_DAG_ID='dag_with_cron_expression_v04' AIRFLOW_CTX_TASK_ID='task1' AIRFLOW_CTX_EXECUTION_DATE='2023-04-28T03:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-04-28T03:00:00+00:00'
+[2023-08-22T10:39:06.659+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-08-22T10:39:06.661+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'echo dag with cron expression']
+[2023-08-22T10:39:06.672+0000] {subprocess.py:86} INFO - Output:
+[2023-08-22T10:39:06.675+0000] {subprocess.py:93} INFO - dag with cron expression
+[2023-08-22T10:39:06.676+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-08-22T10:39:06.705+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=dag_with_cron_expression_v04, task_id=task1, execution_date=20230428T030000, start_date=20230822T103906, end_date=20230822T103906
+[2023-08-22T10:39:06.738+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-08-22T10:39:06.759+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check
